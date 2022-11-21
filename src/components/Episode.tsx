@@ -5,6 +5,12 @@ interface EpisodeProps {
 }
 
 export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
+  
+  function removeParagraphTags(summary: string) {
+    summary = summary.replace(/<p>/g, "");
+    return summary.replace(/[</p>]/g, "");
+  }
+
   return (
     <div className="episodeContainer">
       <h4>
@@ -15,7 +21,7 @@ export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
         <img src={episode.image.medium} alt={`still from ${episode.name}`} />
       </div>
       <div className="episodeSummaryContainer">
-        <p>{episode.summary}</p>
+        <p>{removeParagraphTags(episode.summary)}</p>
       </div>
     </div>
   );
