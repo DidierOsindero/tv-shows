@@ -1,19 +1,22 @@
 import { IEpisode } from "./MainContent";
+interface EpisodeProps {
+  episode: IEpisode;
+}
 
-export const Episode = (props: IEpisode): JSX.Element => {
+export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
   return (
     <div className="episodeContainer">
       <h4>
-        {props.name} -{" "}
+        {episode.name} -{" "}
         <i>
-          {props.season}: {props.number}
+          {episode.season}: {episode.number}
         </i>
       </h4>
       <div className="episodeImageContainer">
-        <img src={props.image.medium} />
+        <img src={episode.image.medium} alt={`still from ${episode.name}`} />
       </div>
       <div className="episodeSummaryContainer">
-        <p>{props.summary}</p>
+        <p>{episode.summary}</p>
       </div>
     </div>
   );
