@@ -29,7 +29,6 @@ export const MainContent = ({
 }: MainContentProps): JSX.Element => {
   return (
     <div className="mainContentContainer">
-      <p>Main Content</p>
       <EpisodesListView episodes={episodesData} />
     </div>
   );
