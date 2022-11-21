@@ -8,7 +8,7 @@ function App(): JSX.Element {
   return (
     <div className="appContainer">
       <Header />
-      <MainContent />
+      <MainContent episodesData={episodesData}/>
       <Footer />
     </div>
   );
