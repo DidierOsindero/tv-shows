@@ -9,9 +9,7 @@ export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
     <div className="episodeContainer">
       <h4>
         {episode.name} -{" "}
-        <i>
-          {episodeCodeFormatter(episode.season, episode.number)}
-        </i>
+        <i>{episodeCodeFormatter(episode.season, episode.number)}</i>
       </h4>
       <div className="episodeImageContainer">
         <img src={episode.image.medium} alt={`still from ${episode.name}`} />
