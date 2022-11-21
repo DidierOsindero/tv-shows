@@ -21,14 +21,16 @@ export interface IEpisode {
 }
 
 export interface MainContentProps {
-  episodesData: IEpisode[]
+  episodesData: IEpisode[];
 }
 
-export const MainContent = ({episodesData}:MainContentProps): JSX.Element => {
+export const MainContent = ({
+  episodesData,
+}: MainContentProps): JSX.Element => {
   return (
     <div className="mainContentContainer">
       <p>Main Content</p>
-      <EpisodesListView episodes={episodesData}/>
+      <EpisodesListView episodes={episodesData} />
     </div>
   );
 };
