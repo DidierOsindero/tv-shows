@@ -1,11 +1,17 @@
 import episodesData from "./episodes.json";
-import { greet } from "./utils/greet";
-
-console.log(`Imported ${episodesData.length} episode(s)`);
-console.log(`First episode's name is ${episodesData[0].name}`);
+import "./App.css";
+import { Header } from "./components/Header";
+import { MainContent } from "./components/MainContent";
+import { Footer } from "./components/Footer";
 
 function App(): JSX.Element {
-  return <h1>{greet("World")}</h1>;
+  return (
+    <div className="app">
+      <Header />
+      <MainContent />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
