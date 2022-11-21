@@ -1,4 +1,5 @@
 import { IEpisode } from "./MainContent";
+import { episodeCodeFormatter } from "../utils/episodeCodeFormatter";
 interface EpisodeProps {
   episode: IEpisode;
 }
@@ -9,7 +10,7 @@ export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
       <h4>
         {episode.name} -{" "}
         <i>
-          {episode.season}: {episode.number}
+          {episodeCodeFormatter(episode.season, episode.number)}
         </i>
       </h4>
       <div className="episodeImageContainer">
