@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { EpisodesListView } from "./EpisodesListView";
+import { SearchInput } from "./SearchInput";
 
 export interface IEpisode {
   id: number;
@@ -27,8 +29,18 @@ export interface MainContentProps {
 export const MainContent = ({
   episodesData,
 }: MainContentProps): JSX.Element => {
+  const [inputText, setInputText] = useState<string>("");
+
+  const handleChangeToInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputText(e.target.value);
+  };
+
   return (
     <div className="mainContentContainer">
+      <SearchInput
+        currentSearchText={inputText}
+        changeToInputText={handleChangeToInputText}
+      />
       <EpisodesListView episodes={episodesData} />
     </div>
   );
