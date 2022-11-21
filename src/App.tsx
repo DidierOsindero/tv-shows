@@ -1,3 +1,4 @@
+  import episodesData from './episodes.json'
 import { greet } from "./utils/greet";
 
 function App(): JSX.Element {
