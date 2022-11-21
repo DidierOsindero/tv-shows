@@ -20,10 +20,17 @@ export interface IEpisode {
   _links: { self: { href: string } };
 }
 
-export const MainContent = (): JSX.Element => {
+export interface MainContentProps {
+  episodesData: IEpisode[];
+}
+
+export const MainContent = ({
+  episodesData,
+}: MainContentProps): JSX.Element => {
   return (
     <div className="mainContentContainer">
       <p>Main Content</p>
+      <EpisodesListView episodes={episodesData} />
     </div>
   );
 };
