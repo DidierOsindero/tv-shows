@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer";
 
 function App(): JSX.Element {
   return (
-    <div className="app">
+    <div className="appContainer">
       <Header />
       <MainContent />
       <Footer />
