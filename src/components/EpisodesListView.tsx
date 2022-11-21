@@ -1,9 +1,16 @@
 import { Episode } from "./Episode";
+import { IEpisode } from "./MainContent";
 
-export const EpisodesListView = (): JSX.Element => {
+interface EpisodesListViewProps{
+  episodes: IEpisode[]
+}
+
+export const EpisodesListView = ({episodes}:EpisodesListViewProps): JSX.Element => {
   return (
     <div className="headerContainer">
-      <h1>My App</h1>
+      {episodes.map(el =>
+        <Episode key={el.id} episode={el}/>
+      )}
     </div>
   );
 };
