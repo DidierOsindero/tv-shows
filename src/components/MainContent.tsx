@@ -5,6 +5,7 @@ import { SearchInput } from "./SearchInput";
 import { IEpisode } from "../interfaces";
 import { IShow } from "../interfaces";
 import { ShowSelector } from "./ShowSelector";
+import { EpisodeSelector } from "./EpisodeSelector";
 
 
 export interface MainContentProps {
@@ -24,7 +25,8 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
-        <ShowSelector showData={showData}/>
+        <ShowSelector data={showData} />
+        <EpisodeSelector episodes={episodesData}/>
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
