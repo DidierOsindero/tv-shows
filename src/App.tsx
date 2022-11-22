@@ -11,10 +11,18 @@ function App(): JSX.Element {
   const [episodesData, setEpisodesData] = useState<IEpisode[]>([]);
   const [showData, setShowData] = useState<IShow[]>([]);
 
-  const fetchEpisodesData = async () => {
-    const response = await fetch("https://api.tvmaze.com/shows/82/episodes");
+  const fetchEpisodesData = async (showID?: string) => {
+    const URL: string = showID
+      ? `https://api.tvmaze.com/shows/${showID}/episodes`
+      : "https://api.tvmaze.com/shows/496/episodes";
+    console.log(URL, showID);
+    const response = await fetch(URL);
     const fetchedDataJSON = await response.json();
     setEpisodesData(fetchedDataJSON);
+  };
+
+  const changeEpisodesData = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    fetchEpisodesData(e.target.value);
   };
 
   const fetchShowData = async () => {
@@ -31,7 +39,11 @@ function App(): JSX.Element {
   return (
     <div className="appContainer">
       <Header />
-      <MainContent episodesData={episodesData} showData={showData} />
+      <MainContent
+        onClick={changeEpisodesData}
+        episodesData={episodesData}
+        showData={showData}
+      />
       <Footer />
     </div>
   );
