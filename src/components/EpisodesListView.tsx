@@ -8,14 +8,12 @@ interface EpisodesListViewProps {
 }
 
 export const EpisodesListView = ({
-  episodes, currentSearchText
+  episodes,
+  currentSearchText,
 }: EpisodesListViewProps): JSX.Element => {
-
-  
-
   return (
     <div className="headerContainer">
-      {filterEpisodes(currentSearchText,episodes).map((el) => (
+      {filterEpisodes(currentSearchText, episodes).map((el) => (
         <Episode key={el.id} episode={el} />
       ))}
     </div>

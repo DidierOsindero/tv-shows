@@ -39,13 +39,19 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div>
-      <SearchInput
-        currentSearchText={currentSearchText}
-        changeToSearchText={handleChangeToSearchText}
-      />
-      <p>Showing {filterEpisodes(currentSearchText,episodesData).length} results out of {episodesData.length}</p>
+        <SearchInput
+          currentSearchText={currentSearchText}
+          changeToSearchText={handleChangeToSearchText}
+        />
+        <p>
+          Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
+          results out of {episodesData.length}
+        </p>
       </div>
-      <EpisodesListView episodes={episodesData} currentSearchText={currentSearchText}/>
+      <EpisodesListView
+        episodes={episodesData}
+        currentSearchText={currentSearchText}
+      />
     </div>
   );
 };
