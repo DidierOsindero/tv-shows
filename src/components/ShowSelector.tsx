@@ -1,5 +1,4 @@
 import { IShow } from "../interfaces";
-import { episodeCodeFormatter } from "../utils/episodeCodeFormatter";
 
 interface ShowSelectorProps {
   data: IShow[];
