@@ -1,12 +1,11 @@
 import { IEpisode } from "./MainContent";
 import { episodeCodeFormatter } from "../utils/episodeCodeFormatter";
-import { removeParagraphTags } from "../utils/removeParagraphTags.test";
+import { removeParagraphTags } from "../utils/removeParagraphTags";
 interface EpisodeProps {
   episode: IEpisode;
 }
 
 export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
-
   return (
     <div className="episodeContainer">
       <h4>
