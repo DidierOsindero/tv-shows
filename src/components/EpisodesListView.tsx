@@ -12,7 +12,7 @@ export const EpisodesListView = ({
   currentSearchText,
 }: EpisodesListViewProps): JSX.Element => {
   return (
-    <div className="headerContainer">
+    <div className="episodesListContainer">
       {filterEpisodes(currentSearchText, episodes).map((el) => (
         <Episode key={el.id} episode={el} />
       ))}

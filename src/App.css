@@ -1,0 +1,47 @@
+body {
+  margin: 0px;
+}
+
+.mainContentContainer {
+  margin: none;
+  background-color: rgb(246, 246, 246);
+}
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+
+.headerContainer {
+  background-color: rgb(112, 167, 185);
+  padding: 10px;
+}
+
+.episodesListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.episodeContainer {
+  border: 3px solid rgb(112, 167, 185);
+  width: 300px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+
+input {
+  border: 2px solid grey;
+  margin-right: 7px;
+  height: fit-content;
+  border-radius: 10px;
+}

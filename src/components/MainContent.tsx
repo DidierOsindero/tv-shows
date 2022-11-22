@@ -38,7 +38,7 @@ export const MainContent = ({
 
   return (
     <div className="mainContentContainer">
-      <div>
+      <div className="searchContainer">
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
