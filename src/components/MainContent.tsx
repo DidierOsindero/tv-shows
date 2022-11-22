@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { filterEpisodes } from "../utils/filterEpisodes";
 import { EpisodesListView } from "./EpisodesListView";
 import { SearchInput } from "./SearchInput";
 
@@ -29,19 +30,28 @@ export interface MainContentProps {
 export const MainContent = ({
   episodesData,
 }: MainContentProps): JSX.Element => {
-  const [inputText, setInputText] = useState<string>("");
+  const [currentSearchText, setCurrentSearchText] = useState<string>("");
 
-  const handleChangeToInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value);
+  const handleChangeToSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentSearchText(e.target.value);
   };
 
   return (
     <div className="mainContentContainer">
-      <SearchInput
-        currentSearchText={inputText}
-        changeToInputText={handleChangeToInputText}
+      <div>
+        <SearchInput
+          currentSearchText={currentSearchText}
+          changeToSearchText={handleChangeToSearchText}
+        />
+        <p>
+          Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
+          results out of {episodesData.length}
+        </p>
+      </div>
+      <EpisodesListView
+        episodes={episodesData}
+        currentSearchText={currentSearchText}
       />
-      <EpisodesListView episodes={episodesData} />
     </div>
   );
 };
