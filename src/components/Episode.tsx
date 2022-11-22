@@ -13,10 +13,15 @@ export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
         <i>{episodeCodeFormatter(episode.season, episode.number)}</i>
       </h4>
       <div className="episodeImageContainer">
-        <img src={episode.image.medium} alt={`still from ${episode.name}`} />
+        {episode.image && (
+          <img
+            src={episode.image.medium && episode.image.medium}
+            alt={`still from ${episode.name}`}
+          />
+        )}
       </div>
       <div className="episodeSummaryContainer">
-        <p>{removeParagraphTags(episode.summary)}</p>
+        <p>{episode.summary && removeParagraphTags(episode.summary)}</p>
       </div>
     </div>
   );
