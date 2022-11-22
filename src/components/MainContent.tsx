@@ -29,7 +29,7 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
-        <ShowSelector data={showData} onClick={onClick}/>
+        <ShowSelector data={showData} onClick={onClick} />
         <EpisodeSelector episodes={episodesData} />
         <SearchInput
           currentSearchText={currentSearchText}
