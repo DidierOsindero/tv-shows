@@ -7,7 +7,6 @@ import { MainContent } from "./components/MainContent";
 import { Footer } from "./components/Footer";
 import { useEffect, useState } from "react";
 
-
 function App(): JSX.Element {
   const [episodesData, setEpisodesData] = useState<IEpisode[]>([]);
   const [showData, setShowData] = useState<IShow[]>([]);
@@ -29,12 +28,10 @@ function App(): JSX.Element {
     fetchShowData();
   }, []);
 
- 
-
   return (
     <div className="appContainer">
       <Header />
-      <MainContent episodesData={episodesData} showData={showData}/>
+      <MainContent episodesData={episodesData} showData={showData} />
       <Footer />
     </div>
   );

@@ -1,21 +1,22 @@
-import {IShow} from "../interfaces";
+import { IShow } from "../interfaces";
 import { episodeCodeFormatter } from "../utils/episodeCodeFormatter";
 
 interface ShowSelectorProps {
-    data: IShow[];
+  data: IShow[];
 }
 
-export const ShowSelector = ({data}: ShowSelectorProps): JSX.Element => {
+export const ShowSelector = ({ data }: ShowSelectorProps): JSX.Element => {
   return (
-      <div className="showSelectorContainer">
-        <select className="showSelector">
-        {data.map(show => {
-            return(
-                <option value={show.id} key={show.id}>{show.name}</option>
-            )
+    <div className="showSelectorContainer">
+      <select className="showSelector">
+        {data.map((show) => {
+          return (
+            <option value={show.id} key={show.id}>
+              {show.name}
+            </option>
+          );
         })}
-
-        </select>
-      </div>
-    ) 
-  };
+      </select>
+    </div>
+  );
+};

@@ -7,14 +7,14 @@ import { IShow } from "../interfaces";
 import { ShowSelector } from "./ShowSelector";
 import { EpisodeSelector } from "./EpisodeSelector";
 
-
 export interface MainContentProps {
   episodesData: IEpisode[];
   showData: IShow[];
 }
 
 export const MainContent = ({
-  episodesData, showData
+  episodesData,
+  showData,
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
 
@@ -26,7 +26,7 @@ export const MainContent = ({
     <div className="mainContentContainer">
       <div className="searchContainer">
         <ShowSelector data={showData} />
-        <EpisodeSelector episodes={episodesData}/>
+        <EpisodeSelector episodes={episodesData} />
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
