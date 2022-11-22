@@ -1,4 +1,4 @@
-import { IEpisode } from "../components/MainContent";
+import { IEpisode } from "../interfaces";
 
 export const filterEpisodes = (
   currentSearchText: string,

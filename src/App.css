@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+.showSelectorContainer {
+  margin-right: 20px;
+}
+
 .title {
   margin: 0;
   text-align: center;

@@ -2,33 +2,19 @@ import { useState } from "react";
 import { filterEpisodes } from "../utils/filterEpisodes";
 import { EpisodesListView } from "./EpisodesListView";
 import { SearchInput } from "./SearchInput";
-
-export interface IEpisode {
-  id: number;
-  url: string;
-  name: string;
-  season: number;
-  number: number;
-  type: string;
-  airdate: string;
-  airtime: string;
-  airstamp: string;
-  rating: { average: number | null };
-  runtime: number;
-  image: {
-    medium: string;
-    original: string;
-  };
-  summary: string;
-  _links: { self: { href: string } };
-}
+import { IEpisode } from "../interfaces";
+import { IShow } from "../interfaces";
+import { ShowSelector } from "./ShowSelector";
+import { EpisodeSelector } from "./EpisodeSelector";
 
 export interface MainContentProps {
   episodesData: IEpisode[];
+  showData: IShow[];
 }
 
 export const MainContent = ({
   episodesData,
+  showData,
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
 
@@ -39,6 +25,8 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
+        <ShowSelector data={showData} />
+        <EpisodeSelector episodes={episodesData} />
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
