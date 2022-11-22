@@ -9,14 +9,14 @@ function App(): JSX.Element {
   const [episodesData, setEpisodesData] = useState<IEpisode[]>([]);
 
   const fetchEpisodesData = async () => {
-    const response = await fetch('https://api.tvmaze.com/shows/82/episodes');
+    const response = await fetch("https://api.tvmaze.com/shows/82/episodes");
     const fetchedDataJSON = await response.json();
     setEpisodesData(fetchedDataJSON);
-  }
+  };
 
   useEffect(() => {
     fetchEpisodesData();
-  }, [])
+  }, []);
 
   return (
     <div className="appContainer">
