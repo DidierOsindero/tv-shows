@@ -1,4 +1,4 @@
-import { IEpisode } from "./MainContent";
+import { IEpisode } from "../interfaces";
 import { episodeCodeFormatter } from "../utils/episodeCodeFormatter";
 import { removeParagraphTags } from "../utils/removeParagraphTags";
 interface EpisodeProps {
