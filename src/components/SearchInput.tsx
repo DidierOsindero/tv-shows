@@ -1,17 +1,17 @@
 interface SearchInputProps {
   currentSearchText: string;
-  changeToInputText: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  changeToSearchText: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const SearchInput = ({
   currentSearchText,
-  changeToInputText,
+  changeToSearchText,
 }: SearchInputProps): JSX.Element => {
   return (
     <input
       placeholder="Enter episode name"
       value={currentSearchText}
-      onChange={(e) => changeToInputText(e)}
+      onChange={(e) => changeToSearchText(e)}
     ></input>
   );
 };

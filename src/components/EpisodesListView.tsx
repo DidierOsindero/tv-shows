@@ -3,10 +3,11 @@ import { IEpisode } from "./MainContent";
 
 interface EpisodesListViewProps {
   episodes: IEpisode[];
+  currentSearchText: string;
 }
 
 export const EpisodesListView = ({
-  episodes,
+  episodes, currentSearchText
 }: EpisodesListViewProps): JSX.Element => {
   return (
     <div className="headerContainer">

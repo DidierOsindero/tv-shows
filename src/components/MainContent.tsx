@@ -29,19 +29,19 @@ export interface MainContentProps {
 export const MainContent = ({
   episodesData,
 }: MainContentProps): JSX.Element => {
-  const [inputText, setInputText] = useState<string>("");
+  const [currentSearchText, setCurrentSearchText] = useState<string>("");
 
-  const handleChangeToInputText = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value);
+  const handleChangeToSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCurrentSearchText(e.target.value);
   };
 
   return (
     <div className="mainContentContainer">
       <SearchInput
-        currentSearchText={inputText}
-        changeToInputText={handleChangeToInputText}
+        currentSearchText={currentSearchText}
+        changeToSearchText={handleChangeToSearchText}
       />
-      <EpisodesListView episodes={episodesData} />
+      <EpisodesListView episodes={episodesData} currentSearchText={currentSearchText}/>
     </div>
   );
 };
