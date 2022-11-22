@@ -5,7 +5,6 @@ interface EpisodeProps {
 }
 
 export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
-  
   function removeParagraphTags(summary: string) {
     summary = summary.replace(/<p>/g, "");
     return summary.replace(/[</p>]/g, "");
