@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { filterEpisodes } from "../utils/filterEpisodes";
 import { EpisodesListView } from "./EpisodesListView";
 import { SearchInput } from "./SearchInput";
 
@@ -37,10 +38,13 @@ export const MainContent = ({
 
   return (
     <div className="mainContentContainer">
+      <div>
       <SearchInput
         currentSearchText={currentSearchText}
         changeToSearchText={handleChangeToSearchText}
       />
+      <p>Showing {filterEpisodes(currentSearchText,episodesData).length} results out of {episodesData.length}</p>
+      </div>
       <EpisodesListView episodes={episodesData} currentSearchText={currentSearchText}/>
     </div>
   );
