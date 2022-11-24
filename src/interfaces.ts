@@ -22,4 +22,13 @@ export interface IShow {
   id: number;
   url: string;
   name: string;
+  image: {
+    medium: string;
+    original: string;
+  };
+  summary: string;
+  genres: string [];
+  status: string;
+  rating: {average: number | null};
+  runtime: number | null;
 }

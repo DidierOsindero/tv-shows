@@ -6,6 +6,7 @@ import { IEpisode } from "../interfaces";
 import { IShow } from "../interfaces";
 import { ShowSelector } from "./ShowSelector";
 import { EpisodeSelector } from "./EpisodeSelector";
+import { ShowListView } from "./ShowListView";
 
 type changeEpisodeDataFunc = (e: React.ChangeEvent<HTMLSelectElement>) => void;
 
@@ -40,6 +41,7 @@ export const MainContent = ({
           results out of {episodesData.length}
         </p>
       </div>
+      <ShowListView shows={showData} currentSearchText={currentSearchText}/>
       <EpisodesListView
         episodes={episodesData}
         currentSearchText={currentSearchText}
