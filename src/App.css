@@ -32,6 +32,71 @@ body {
   padding: 10px;
 }
 
+.showContainer {
+  background-color: rgb(250, 250, 250);
+  border: 2px solid rgb(214, 214, 214);
+  border-radius: 15px;
+  margin-bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80vw;
+  transition: border 500ms, background-color 200ms;
+  box-shadow: 10px 10px 20px -5px rgb(161, 161, 161);
+}
+
+.showContainer:hover {
+  background-color: white;
+  border: 2px solid rgb(112, 167, 185);
+}
+
+.showContainer:active {
+  transition: 0ms;
+  background-color: white;
+  border: 2px solid rgb(73, 73, 73);
+}
+
+.showContentContainer {
+  display: flex;
+}
+
+.showTitle {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.showInfoListContainer {
+  border: 1px solid gray;
+  border-radius: 14px;
+  background-color: rgb(253, 253, 253);
+  margin: auto 10px;
+  box-shadow: 10px 10px 20px -5px rgb(161, 161, 161);
+}
+
+.showSummaryContainer {
+  font-size: 20px;
+  color: rgb(37, 37, 37);
+}
+
+.showInfoList {
+  padding: 10px;
+  color: rgb(37, 37, 37);
+}
+
+.showSummaryContainer {
+  margin: auto 20px;
+  width: 35rem;
+}
+
+.showImageContainer {
+  margin: 20px;
+}
+
+.showImage {
+  border: 1px solid rgb(73, 73, 73);
+}
+
 .episodesListContainer {
   display: flex;
   flex-wrap: wrap;

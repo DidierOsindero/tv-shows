@@ -27,8 +27,8 @@ export interface IShow {
     original: string;
   };
   summary: string;
-  genres: string [];
+  genres: string[];
   status: string;
-  rating: {average: number | null};
+  rating: { average: number | null };
   runtime: number | null;
 }

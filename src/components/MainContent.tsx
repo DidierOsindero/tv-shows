@@ -19,7 +19,8 @@ export interface MainContentProps {
 
 export const MainContent = ({
   episodesData,
-  showData,handleShowClick,
+  showData,
+  handleShowClick,
   handleShowSelectorClick,
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
@@ -42,7 +43,11 @@ export const MainContent = ({
           results out of {episodesData.length}
         </p>
       </div>
-      <ShowListView shows={showData} currentSearchText={currentSearchText} handleShowClick={handleShowClick}/>
+      <ShowListView
+        shows={showData}
+        currentSearchText={currentSearchText}
+        handleShowClick={handleShowClick}
+      />
       <EpisodesListView
         episodes={episodesData}
         currentSearchText={currentSearchText}
