@@ -26,7 +26,7 @@ function App(): JSX.Element {
   };
 
   const fetchShowData = async () => {
-    const response = await fetch("http://api.tvmaze.com/shows?page=1");
+    const response = await fetch("https://api.tvmaze.com/shows?page=1");
     const fetchedDataJSON = await response.json();
     setShowData(fetchedDataJSON);
   };
