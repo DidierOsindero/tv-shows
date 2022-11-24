@@ -2,6 +2,11 @@ body {
   margin: 0px;
 }
 
+.showSelector {
+  border-radius: 40px;
+  background-color: white;
+}
+
 .mainContentContainer {
   margin: none;
   background-color: rgb(246, 246, 246);
