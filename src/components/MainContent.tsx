@@ -6,19 +6,22 @@ import { IEpisode } from "../interfaces";
 import { IShow } from "../interfaces";
 import { ShowSelector } from "./ShowSelector";
 import { EpisodeSelector } from "./EpisodeSelector";
+import { ShowListView } from "./ShowListView";
 
 type changeEpisodeDataFunc = (e: React.ChangeEvent<HTMLSelectElement>) => void;
 
 export interface MainContentProps {
   episodesData: IEpisode[];
   showData: IShow[];
-  onClick: changeEpisodeDataFunc;
+  handleShowClick: (showId: string) => void;
+  handleShowSelectorClick: changeEpisodeDataFunc;
 }
 
 export const MainContent = ({
   episodesData,
   showData,
-  onClick,
+  handleShowClick,
+  handleShowSelectorClick,
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
 
@@ -29,7 +32,7 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
-        <ShowSelector data={showData} onClick={onClick} />
+        <ShowSelector data={showData} onClick={handleShowSelectorClick} />
         <EpisodeSelector episodes={episodesData} />
         <SearchInput
           currentSearchText={currentSearchText}
@@ -40,6 +43,11 @@ export const MainContent = ({
           results out of {episodesData.length}
         </p>
       </div>
+      <ShowListView
+        shows={showData}
+        currentSearchText={currentSearchText}
+        handleShowClick={handleShowClick}
+      />
       <EpisodesListView
         episodes={episodesData}
         currentSearchText={currentSearchText}
