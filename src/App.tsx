@@ -21,8 +21,12 @@ function App(): JSX.Element {
     setEpisodesData(fetchedDataJSON);
   };
 
-  const changeEpisodesData = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleShowSelectorClick = (e: React.ChangeEvent<HTMLSelectElement>) => {
     fetchEpisodesData(e.target.value);
+  };
+
+  const handleShowClick = (showID: string) => {
+    fetchEpisodesData(showID);
   };
 
   const fetchShowData = async () => {
@@ -40,7 +44,8 @@ function App(): JSX.Element {
     <div className="appContainer">
       <Header />
       <MainContent
-        onClick={changeEpisodesData}
+        handleShowSelectorClick={handleShowSelectorClick}
+        handleShowClick={handleShowClick}
         episodesData={episodesData}
         showData={showData}
       />

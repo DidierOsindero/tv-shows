@@ -3,11 +3,13 @@ import { removeParagraphTags } from "../utils/removeParagraphTags";
 
 interface ShowProps {
     show: IShow;
+    handleShowClick: (e: string) => void;
   }
   
-  export const Show = ({ show }: ShowProps): JSX.Element => {
+  export const Show = ({ show, handleShowClick }: ShowProps): JSX.Element => {
+
     return (
-      <div className="showContainer">
+      <div className="showContainer" id={String(show.id)} onClick={(e) => handleShowClick(e.currentTarget.id)}>
         <h4>
           {show.name} -{" "}
         </h4>

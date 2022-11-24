@@ -5,16 +5,17 @@ import { Show } from "./Show";
 interface ShowListViewProps {
     shows: IShow[];
     currentSearchText: string;
+    handleShowClick: (e: string) => void;
   }
   
   export const ShowListView = ({
     shows,
-    currentSearchText,
+    currentSearchText, handleShowClick
   }: ShowListViewProps): JSX.Element => {
     return (
       <div className="showListContainer">
         {filterShows(currentSearchText,shows).map((show) => (
-          <Show key={show.id} show={show} />
+          <Show key={show.id} show={show} handleShowClick={handleShowClick}/>
         ))}
       </div>
     );
