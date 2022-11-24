@@ -24,6 +24,12 @@ export const MainContent = ({
   handleShowSelectorClick,
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
+  const [isShowPressed, setisShowPressed] = useState(false);
+
+  const handleShowIsPressed = () => {
+    setisShowPressed(!isShowPressed);
+    window.scrollTo({ top: 0 });
+  };
 
   const handleChangeToSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentSearchText(e.target.value);
@@ -43,15 +49,22 @@ export const MainContent = ({
           results out of {episodesData.length}
         </p>
       </div>
-      <ShowListView
-        shows={showData}
-        currentSearchText={currentSearchText}
-        handleShowClick={handleShowClick}
-      />
-      <EpisodesListView
-        episodes={episodesData}
-        currentSearchText={currentSearchText}
-      />
+      {isShowPressed ? (
+        <>
+          <button onClick={handleShowIsPressed}>Shows</button>
+          <EpisodesListView
+            episodes={episodesData}
+            currentSearchText={currentSearchText}
+          />
+        </>
+      ) : (
+        <ShowListView
+          shows={showData}
+          currentSearchText={currentSearchText}
+          handleShowClick={handleShowClick}
+          handleShowIsPressed={handleShowIsPressed}
+        />
+      )}
     </div>
   );
 };
