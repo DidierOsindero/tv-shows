@@ -4,14 +4,22 @@ import { removeParagraphTags } from "../utils/removeParagraphTags";
 interface ShowProps {
   show: IShow;
   handleShowClick: (e: string) => void;
+  handleShowIsPressed: () => void;
 }
 
-export const Show = ({ show, handleShowClick }: ShowProps): JSX.Element => {
+export const Show = ({
+  show,
+  handleShowClick,
+  handleShowIsPressed,
+}: ShowProps): JSX.Element => {
   return (
     <div
       className="showContainer"
       id={String(show.id)}
-      onClick={(e) => handleShowClick(e.currentTarget.id)}
+      onClick={(e) => {
+        handleShowClick(e.currentTarget.id);
+        handleShowIsPressed();
+      }}
     >
       <h2 className="showTitle">{show.name}</h2>
       <div className="showContentContainer">
