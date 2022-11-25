@@ -9,7 +9,7 @@ export const SearchInput = ({
 }: SearchInputProps): JSX.Element => {
   return (
     <input
-      placeholder="Enter episode name"
+      placeholder="Search..."
       value={currentSearchText}
       onChange={(e) => changeToSearchText(e)}
     ></input>
