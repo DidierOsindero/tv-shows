@@ -22,12 +22,15 @@ export const ShowSelector = ({
         className="showSelector"
         onChange={(e) => {
           onClick(e);
-          e.target.value == undefined
+          e.target.value === undefined
             ? handleChangeShowID(undefined)
             : handleChangeShowID(Number(e.target.value));
         }}
       >
-        <option value='' className="allShows"> All Shows</option>
+        <option value="" className="allShows">
+          {" "}
+          All Shows
+        </option>
         {sortedData.map((show) => {
           return (
             <option value={show.id} key={show.id}>

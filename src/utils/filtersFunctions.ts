@@ -17,18 +17,18 @@ export const filterEpisodes = (
 export const filterShows = (
   currentSearchText: string,
   shows: IShow[],
-  showID:number|undefined
+  showID: number | undefined
 ): IShow[] => {
   const filteredArr: IShow[] = shows.filter((el) => {
     const isMatchingSearchText =
       el.name.toLowerCase().includes(currentSearchText.toLowerCase()) ||
       (el.summary &&
         el.summary.toLowerCase().includes(currentSearchText.toLowerCase()));
-    const isMatchingShowID = showID === el.id
-    if(showID){
-      return isMatchingShowID
-    }else{
-      return isMatchingSearchText
+    const isMatchingShowID = showID === el.id;
+    if (showID) {
+      return isMatchingShowID;
+    } else {
+      return isMatchingSearchText;
     }
   });
   return filteredArr;
