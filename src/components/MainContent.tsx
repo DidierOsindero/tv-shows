@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { filterEpisodes, filterShows } from "../utils/filtersFunctions";
 import { EpisodesListView } from "./EpisodesListView";
 import { SearchInput } from "./SearchInput";
@@ -33,6 +33,10 @@ export const MainContent = ({
   const handleChangeToSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentSearchText(e.target.value);
   };
+
+  useEffect (() => {
+    setCurrentSearchText("");
+  }, [isShowPressed])
 
   return (
     <div className="mainContentContainer">
