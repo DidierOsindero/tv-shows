@@ -34,24 +34,35 @@ export const MainContent = ({
     setCurrentSearchText(e.target.value);
   };
 
-  useEffect (() => {
+  useEffect(() => {
     setCurrentSearchText("");
-  }, [isShowPressed])
+  }, [isShowPressed]);
 
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
-      {isShowPressed && <button className="backToShowsBtn"onClick={handleShowIsPressed}>Back to shows</button>}
+        {isShowPressed && (
+          <button className="backToShowsBtn" onClick={handleShowIsPressed}>
+            Back to shows
+          </button>
+        )}
         <ShowSelector data={showData} onClick={handleShowSelectorClick} />
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
         />
-        
-          {isShowPressed ? <p>Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
-          results out of {episodesData.length}</p> : <p>Showing {filterShows(currentSearchText, showData).length}{" "}
-          results out of {showData.length}</p>}
-        
+
+        {isShowPressed ? (
+          <p>
+            Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
+            results out of {episodesData.length}
+          </p>
+        ) : (
+          <p>
+            Showing {filterShows(currentSearchText, showData).length} results
+            out of {showData.length}
+          </p>
+        )}
       </div>
       {isShowPressed ? (
         <>
