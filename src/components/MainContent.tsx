@@ -41,6 +41,7 @@ export const MainContent = ({
   return (
     <div className="mainContentContainer">
       <div className="searchContainer">
+      {isShowPressed && <button onClick={handleShowIsPressed}>Back to shows</button>}
         <ShowSelector data={showData} onClick={handleShowSelectorClick} />
         <SearchInput
           currentSearchText={currentSearchText}
@@ -54,7 +55,6 @@ export const MainContent = ({
       </div>
       {isShowPressed ? (
         <>
-          <button onClick={handleShowIsPressed}>Shows</button>
           <EpisodesListView
             episodes={episodesData}
             currentSearchText={currentSearchText}
