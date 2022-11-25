@@ -5,7 +5,6 @@ import { SearchInput } from "./SearchInput";
 import { IEpisode } from "../interfaces";
 import { IShow } from "../interfaces";
 import { ShowSelector } from "./ShowSelector";
-import { EpisodeSelector } from "./EpisodeSelector";
 import { ShowListView } from "./ShowListView";
 
 type changeEpisodeDataFunc = (e: React.ChangeEvent<HTMLSelectElement>) => void;
@@ -39,7 +38,6 @@ export const MainContent = ({
     <div className="mainContentContainer">
       <div className="searchContainer">
         <ShowSelector data={showData} onClick={handleShowSelectorClick} />
-        <EpisodeSelector episodes={episodesData} />
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
