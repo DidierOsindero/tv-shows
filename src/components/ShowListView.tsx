@@ -1,5 +1,5 @@
 import { IShow } from "../interfaces";
-import { filterShows } from "../utils/filterEpisodes";
+import { filterShows } from "../utils/filtersFunctions";
 import { Show } from "./Show";
 
 interface ShowListViewProps {

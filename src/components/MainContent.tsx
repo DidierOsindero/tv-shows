@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { filterEpisodes } from "../utils/filterEpisodes";
+import { filterEpisodes, filterShows } from "../utils/filtersFunctions";
 import { EpisodesListView } from "./EpisodesListView";
 import { SearchInput } from "./SearchInput";
 import { IEpisode } from "../interfaces";
@@ -42,10 +42,11 @@ export const MainContent = ({
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
         />
-        <p>
-          Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
-          results out of {episodesData.length}
-        </p>
+        
+          {isShowPressed ? <p>Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
+          results out of {episodesData.length}</p> : <p>Showing {filterShows(currentSearchText, showData).length}{" "}
+          results out of {showData.length}</p>}
+        
       </div>
       {isShowPressed ? (
         <>

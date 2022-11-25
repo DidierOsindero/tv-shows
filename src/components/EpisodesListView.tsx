@@ -1,6 +1,6 @@
 import { Episode } from "./Episode";
 import { IEpisode } from "../interfaces";
-import { filterEpisodes } from "../utils/filterEpisodes";
+import { filterEpisodes } from "../utils/filtersFunctions";
 
 interface EpisodesListViewProps {
   episodes: IEpisode[];
