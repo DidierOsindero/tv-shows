@@ -24,11 +24,16 @@ export const MainContent = ({
 }: MainContentProps): JSX.Element => {
   const [currentSearchText, setCurrentSearchText] = useState<string>("");
   const [isShowPressed, setisShowPressed] = useState(false);
+  const [showID, setShowID]= useState<number|undefined>(undefined)
 
   const handleShowIsPressed = () => {
     setisShowPressed(!isShowPressed);
     window.scrollTo({ top: 0 });
   };
+
+  const handleChangeShowID = (showID:number|undefined) => {
+    setShowID(showID)
+  }
 
   const handleChangeToSearchText = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentSearchText(e.target.value);
@@ -46,7 +51,7 @@ export const MainContent = ({
             Back to shows
           </button>
         )}
-        <ShowSelector data={showData} onClick={handleShowSelectorClick} />
+        <ShowSelector data={showData} onClick={handleShowSelectorClick} handleChangeShowID={handleChangeShowID}/>
         <SearchInput
           currentSearchText={currentSearchText}
           changeToSearchText={handleChangeToSearchText}
@@ -54,13 +59,13 @@ export const MainContent = ({
 
         {isShowPressed ? (
           <p>
-            Showing {filterEpisodes(currentSearchText, episodesData).length}{" "}
-            results out of {episodesData.length}
+            Showing {filterEpisodes(currentSearchText, episodesData).length} out
+            of {episodesData.length} results
           </p>
         ) : (
           <p>
-            Showing {filterShows(currentSearchText, showData).length} results
-            out of {showData.length}
+            Showing {filterShows(currentSearchText, showData, showID).length} out of{" "}
+            {showData.length} results
           </p>
         )}
       </div>
@@ -77,6 +82,7 @@ export const MainContent = ({
           currentSearchText={currentSearchText}
           handleShowClick={handleShowClick}
           handleShowIsPressed={handleShowIsPressed}
+          showID ={showID}
         />
       )}
     </div>

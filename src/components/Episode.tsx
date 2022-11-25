@@ -15,6 +15,7 @@ export const Episode = ({ episode }: EpisodeProps): JSX.Element => {
       <div className="episodeImageContainer">
         {episode.image && (
           <img
+            className="episodesImages"
             src={episode.image.medium && episode.image.medium}
             alt={`still from ${episode.name}`}
           />
