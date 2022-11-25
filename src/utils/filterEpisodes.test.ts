@@ -1,4 +1,4 @@
-import { filterEpisodes } from "./filterEpisodes";
+import { filterEpisodes } from "./filtersFunctions";
 import episodes from "../episodes.json";
 test("filterEpisodes should return an array of filtered episodes", () => {
   expect(filterEpisodes("Baelor", episodes)).toEqual([episodes[8]]);
