@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background-color: rgb(246, 246, 246);
 }
 
 .showSelector {
@@ -32,7 +33,6 @@ body {
 
 .mainContentContainer {
   margin: none;
-  background-color: rgb(246, 246, 246);
 }
 .searchContainer {
   display: flex;
