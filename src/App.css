@@ -33,7 +33,9 @@ body {
 
 .mainContentContainer {
   margin: none;
+  margin-top: 70px;
 }
+
 .searchContainer {
   display: flex;
   justify-content: center;
@@ -47,12 +49,21 @@ body {
 .title {
   margin: 0;
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.825);
+  width: fit-content;
+}
+
+.title:hover {
+cursor: pointer;
+color: white;
 }
 
 .headerContainer {
   background-color: rgb(112, 167, 185);
   padding: 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .showContainer {
@@ -157,7 +168,3 @@ input {
   width: 100%;
 }
 
-.episodesImages:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-    rgba(0, 0, 0, 0.22) 0px 10px 10px;
-}
