@@ -6,12 +6,16 @@ interface ShowSelectorProps {
   data: IShow[];
   onClick: changeEpisodeDataFunc;
   handleChangeShowID: (showID: number | undefined) => void;
+  isShowPressed: boolean,
+  showID: number | undefined
 }
 
 export const ShowSelector = ({
   data,
   onClick,
   handleChangeShowID,
+  isShowPressed,
+  showID
 }: ShowSelectorProps): JSX.Element => {
   const sortedData = data.sort((a, b) => {
     return a.name.localeCompare(b.name);
@@ -27,13 +31,12 @@ export const ShowSelector = ({
             : handleChangeShowID(Number(e.target.value));
         }}
       >
-        <option value="" className="allShows">
-          {" "}
+        {!isShowPressed && <option value="" className="allShows">
           All Shows
-        </option>
+        </option>}
         {sortedData.map((show) => {
           return (
-            <option value={show.id} key={show.id}>
+            <option value={show.id} key={show.id} selected={show.id === showID? true : false }>
               {show.name}
             </option>
           );

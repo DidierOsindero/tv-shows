@@ -26,8 +26,9 @@ export const MainContent = ({
   const [isShowPressed, setisShowPressed] = useState(false);
   const [showID, setShowID] = useState<number | undefined>(undefined);
 
-  const handleShowIsPressed = () => {
+  const handleShowIsPressed = (showID:undefined|string = undefined) => {
     setisShowPressed(!isShowPressed);
+    setShowID(Number(showID));
     window.scrollTo({ top: 0 });
   };
 
@@ -47,7 +48,7 @@ export const MainContent = ({
     <div className="mainContentContainer">
       <div className="searchContainer">
         {isShowPressed && (
-          <button className="backToShowsBtn" onClick={handleShowIsPressed}>
+          <button className="backToShowsBtn" onClick={() => handleShowIsPressed()}>
             Back to shows
           </button>
         )}
@@ -55,6 +56,8 @@ export const MainContent = ({
           data={showData}
           onClick={handleShowSelectorClick}
           handleChangeShowID={handleChangeShowID}
+          isShowPressed={isShowPressed}
+          showID={showID}
         />
         <SearchInput
           currentSearchText={currentSearchText}

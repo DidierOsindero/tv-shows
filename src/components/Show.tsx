@@ -4,7 +4,7 @@ import { removeParagraphTags } from "../utils/removeParagraphTags";
 interface ShowProps {
   show: IShow;
   handleShowClick: (e: string) => void;
-  handleShowIsPressed: () => void;
+  handleShowIsPressed: (showID: string) => void;
 }
 
 export const Show = ({
@@ -18,7 +18,7 @@ export const Show = ({
       id={String(show.id)}
       onClick={(e) => {
         handleShowClick(e.currentTarget.id);
-        handleShowIsPressed();
+        handleShowIsPressed(e.currentTarget.id);
       }}
     >
       <h2 className="showTitle">{show.name}</h2>
